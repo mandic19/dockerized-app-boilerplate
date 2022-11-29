@@ -29,20 +29,19 @@ This is a sample project with a purpose to be a general template for a typical d
 
 ### Development
 
-1. In a project root run command: `docker-compose up`
-2. In terminal, navigate to `app/api` subdirectory, run command `winpty docker-compose exec api bash` and in the docker container:
+1. In a project root run command: `docker-compose up --build`
+2. In a project root run command: `winpty docker-compose exec api bash` and in the docker container:
+    - Navigate to `application/api` subdirectory
     - Run `apt-get update`
     - Run `composer install`
     - Run `php init` and chose in which environment you want to run it
     - Run `php yii migrate`
-3. In terminal, navigate to `app/web` subdirectory, run command `winpty docker-compose exec web sh` and in the docker container:
-    - Run `apt-get update`
-    - Run `npm install`
 
 ### Production
 
 1. In a project root run command: `docker-compose -f docker-compose-prod.yml up --build`
-2. In terminal, navigate to `app/api` subdirectory, run command `winpty docker-compose exec api bash` and in the docker container:
+2. In a project root run command: `winpty docker-compose exec api bash` and in the docker container:
+   - Navigate to `application/api` subdirectory
    - Run `apt-get update`
    - Run `composer install`
    - Run `php init` and chose in which environment you want to run it

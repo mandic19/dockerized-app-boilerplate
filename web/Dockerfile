@@ -6,7 +6,7 @@ WORKDIR /application
 # Copy app files
 COPY . .
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN npm ci 
+RUN npm install
 # ==== RUN =======
 # Set the env to "development"
 ENV NODE_ENV development

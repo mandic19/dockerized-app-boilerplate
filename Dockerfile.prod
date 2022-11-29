@@ -4,7 +4,7 @@ WORKDIR /application
 # Copy app files
 COPY ./web .
 # Cache and Install dependencies
-RUN npm ci --production
+RUN npm i --production
 # Build the app
 RUN npm run build
 # Bundle static assets with nginx

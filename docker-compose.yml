@@ -33,8 +33,6 @@ services:
     build: /web
     container_name: app-web
     working_dir: /application
-    volumes:
-      - ./web:/application
     ports:
       - "3000:3000"
     environment:
