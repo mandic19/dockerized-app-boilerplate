@@ -1,0 +1,39 @@
+{
+  "name": "yii2/api",
+  "description": "Yii2 API",
+  "keywords": ["yii2", "api"],
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.0",
+    "yiisoft/yii2": "2.0.47",
+    "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+    "2amigos/yii2-resource-manager-component": "*",
+    "yiisoft/yii2-imagine": "^2.0@dev",
+    "ps/image-optimizer": "*",
+    "hosannahighertech/yii2-oauth2-server": "*"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0",
+    "yiisoft/yii2-faker": "~2.0.0",
+    "symfony/browser-kit": ">=2.7 <=4.2.4",
+    "yii2mod/yii2-swagger": "*"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
