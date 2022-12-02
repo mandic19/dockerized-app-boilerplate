@@ -35,5 +35,7 @@ services:
     working_dir: /application
     ports:
       - "3000:3000"
+    volumes:
+      - ./web:/application
     environment:
       - CHOKIDAR_USEPOLLING=true

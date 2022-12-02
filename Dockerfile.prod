@@ -2,9 +2,12 @@ FROM node:alpine AS builder
 # Set work directory
 WORKDIR /application
 # Copy app files
-COPY ./web .
-# Cache and Install dependencies
-RUN npm i --production
+COPY ./web/package.json ./
+COPY ./web/package-lock.json ./
+COPY ./web/src ./src
+COPY ./web/public ./public
+# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+RUN npm ci --production
 # Build the app
 RUN npm run build
 # Bundle static assets with nginx
