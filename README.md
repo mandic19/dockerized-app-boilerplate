@@ -13,34 +13,50 @@ This is a sample project with a purpose to be a general template for a typical d
 
 ### Directory structure
 
-    ├── api                         # Yii2 Rest API template application
-    ├── logs                        # NGINX access/error logs
-    ├── nginx                       # Yii2 Rest API template application
-    │   ├── dev              
-    │   │   ├── default.config      # nginx default configuration for dev/local environment
-    │   ├── prod              
-    │   │   ├── default.config      # nginx default configuration for production environment
-    ├── web                         # React web application template
-    ├── docker-compose.yml          # docker-compose.yml boilerplate for dev/local environment
-    ├── docker-compose-prod.yml     # docker-compose.yml boilerplate for production environment
-    ├── docker-database.env         # database env file for dev/local environment
-    ├── docker-database-prod.env    # database env file production environment
+    ├── api                                  # Yii2 Rest API template application
+    ├── web                                  # React web application template
+    ├── logs                                 # Nginx access/error logs
+    ├── docker                               # Dockerization config
+    │   ├── dev
+    │   │   ├── frontend
+    │   │   │   ├── Dockerfile               # frontend container build instructions
+    │   │   ├── nginx                        
+    │   │   │   ├── default.config           # Nginx default configuration
+    │   │   ├── php-fpm
+    │   │   │   ├── Dockerfile               # php-fpm container build instructions
+    │   │   │   ├── pho-ini-overrides.ini    # Config for overriding php.ini settings
+    │   │   ├── .env                         # Environment variables
+    │   │   ├── docker-compose.yml           # Docker compose boilerplate file
+    │   │   ├── docker-database.env          # Database environment variables
+    │   ├── prod
+    │   │   ├── nginx                        
+    │   │   │   ├── Dockerfile               # Nginx container build instructions
+    │   │   │   ├── default.config           # Nginx default configuration
+    │   │   ├── php-fpm
+    │   │   │   ├── Dockerfile               # php-fpm container build instructions
+    │   │   │   ├── pho-ini-overrides.ini    # Config for overriding php.ini settings
+    │   │   ├── .env                         # Environment variables
+    │   │   ├── docker-compose.yml           # Docker compose boilerplate file
+    │   │   ├── docker-database.env          # Database environment variables
     └── README.md
 
-### Development
 
-1. In a project root run command: `docker-compose up --build`
-2. In a project root run command: `winpty docker-compose exec api bash` and in the docker container:
-    - Navigate to `application/api` subdirectory
-    - Run `apt-get update`
-    - Run `composer install`
-    - Run `php init` and chose in which environment you want to run it
-    - Run `php yii migrate`
+## Development
 
-### Production
+1. Navigate to a following directory: `cd docker/dev`
+2. Run command: `docker-compose -p "app_name" up --build`
+3. Run command: `winpty docker-compose exec api bash` and in the docker container:
+   - Navigate to `application/api` subdirectory
+   - Run `apt-get update`
+   - Run `composer install`
+   - Run `php init` and chose in which environment you want to run it
+   - Run `php yii migrate`
 
-1. In a project root run command: `docker-compose -f docker-compose-prod.yml up --build`
-2. In a project root run command: `winpty docker-compose exec api bash` and in the docker container:
+## Production
+
+1. Navigate to a following directory: `cd docker/prod`
+2. Run command: `docker-compose -p "app_name" up --build`
+3. Run command: `winpty docker-compose exec api bash` and in the docker container:
    - Navigate to `application/api` subdirectory
    - Run `apt-get update`
    - Run `composer install`

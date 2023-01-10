@@ -1,13 +1,13 @@
 # ==== CONFIGURE =====
-# Use a Node 16 base image
-FROM node:16-alpine 
+# Use a Node base image
+FROM node:alpine
 # Set the working directory to /application inside the container
 WORKDIR /application
 # Copy app files
-COPY ./package-lock.json ./
-COPY ./package.json ./
-COPY ./src ./src
-COPY ./public ./public
+COPY ./web/package-lock.json ./
+COPY ./web/package.json ./
+COPY ./web/src ./src
+COPY ./web/public ./public
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
 RUN npm ci
 # ==== RUN =======
@@ -17,4 +17,5 @@ ENV NODE_ENV development
 EXPOSE 3000
 # Install dependencies on host and start the app
 CMD "node_modules" && npm start || npm ci && npm start
+
 
