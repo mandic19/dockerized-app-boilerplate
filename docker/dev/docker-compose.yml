@@ -21,7 +21,7 @@ services:
 
   api:
     build: ./api
-    container_name: ${APP_NAME}-fpm
+    container_name: ${APP_NAME}-api
     working_dir: /application
     volumes:
       - ${ROOT_PATH}:/application
