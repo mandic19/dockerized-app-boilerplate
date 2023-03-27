@@ -1,13 +1,13 @@
-Trello Clone
+Dockerized web app boilerplate
 ============================
 
 ### Description
 
-This is a sample project with a purpose to replicate Trello board and it's functionalities.
+This is a sample project with a purpose to be a general template for a typical dockerized web application. 
 
 ###Technologies used:    
 
-    ├── FRONTEND                      # React.JS
+    ├── FRONTEND                      # React.JS (but any other JS Framework/Library will be suitable)
     ├── RESTFUL API                   # Yii2 PHP Framework
     ├── WEBSERVER                     # Nginx
 

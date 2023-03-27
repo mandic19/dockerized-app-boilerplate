@@ -85,6 +85,26 @@ return [
                 'application/json' => 'yii\web\JsonParser'
             ]
         ],
+        'response' => [
+            'class' => 'yii\web\Response',
+            'format' => Response::FORMAT_JSON,
+            'on beforeSend' => function ($event) {
+                $response = $event->sender;
+
+                if ($response->data !== null) {
+                    $data = [];
+                    if (!$response->isSuccessful) {
+                        $data['success'] = false;
+                        $data['code'] = ArrayHelper::getValue($response->data, 'status', 200);
+                        $data['errors'] = [ArrayHelper::getValue($response->data, 'message')];
+                    } else {
+                        $data = $response->data;
+                    }
+                    $response->data = $data;
+                    $response->statusCode = ArrayHelper::getValue($data, 'code');
+                }
+            },
+        ],
         'resourceManager' => [
             'class' => 'api\components\FileSystemResourceManager',
             'basePath' => Yii::getAlias('@api/web/storage'),
