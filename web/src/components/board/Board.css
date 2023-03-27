@@ -1,0 +1,36 @@
+.board {
+  height: 100%;
+  width: 100%;
+}
+
+.board > .header {
+  padding: 0.8rem 2rem;
+}
+
+.board > .header .input-inline-wrapper {
+  min-height: 3.2rem;
+}
+
+.board > .header > .title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+
+.board > .body {
+  display: flex;
+  overflow: auto hidden;
+  height: calc(100% - 10rem);
+  padding: 0 1.6rem 3.9rem;
+}
+
+.add-section-wrapper {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 0.4rem auto;
+  white-space: nowrap;
+  min-width: 27.2rem;
+  max-width: 27.2rem;
+  padding: 0.4rem;
+  background-color: #ebecf0;
+}

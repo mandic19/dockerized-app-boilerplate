@@ -1,13 +1,13 @@
-Dockerized web app boilerplate
+Trello Clone
 ============================
 
 ### Description
 
-This is a sample project with a purpose to be a general template for a typical dockerized web application. 
+This is a sample project with a purpose to replicate Trello board and it's functionalities.
 
 ###Technologies used:    
 
-    ├── FRONTEND                      # React.JS (but any other JS Framework/Library will be suitable)
+    ├── FRONTEND                      # React.JS
     ├── RESTFUL API                   # Yii2 PHP Framework
     ├── WEBSERVER                     # Nginx
 
@@ -18,12 +18,12 @@ This is a sample project with a purpose to be a general template for a typical d
     ├── logs                                 # Nginx access/error logs
     ├── docker                               # Dockerization config
     │   ├── dev
-    │   │   ├── frontend
-    │   │   │   ├── Dockerfile               # frontend container build instructions
+    │   │   ├── web
+    │   │   │   ├── Dockerfile               # FRONTEND container build instructions
     │   │   ├── nginx                        
     │   │   │   ├── default.config           # Nginx default configuration
-    │   │   ├── php-fpm
-    │   │   │   ├── Dockerfile               # php-fpm container build instructions
+    │   │   ├── api
+    │   │   │   ├── Dockerfile               # API container build instructions
     │   │   │   ├── pho-ini-overrides.ini    # Config for overriding php.ini settings
     │   │   ├── .env                         # Environment variables
     │   │   ├── docker-compose.yml           # Docker compose boilerplate file
@@ -32,8 +32,8 @@ This is a sample project with a purpose to be a general template for a typical d
     │   │   ├── nginx                        
     │   │   │   ├── Dockerfile               # Nginx container build instructions
     │   │   │   ├── default.config           # Nginx default configuration
-    │   │   ├── php-fpm
-    │   │   │   ├── Dockerfile               # php-fpm container build instructions
+    │   │   ├── api
+    │   │   │   ├── Dockerfile               # API container build instructions
     │   │   │   ├── pho-ini-overrides.ini    # Config for overriding php.ini settings
     │   │   ├── .env                         # Environment variables
     │   │   ├── docker-compose.yml           # Docker compose boilerplate file

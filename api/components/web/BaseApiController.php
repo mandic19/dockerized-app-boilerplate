@@ -29,7 +29,11 @@ abstract class BaseApiController extends ActiveController
 {
     public $findModel = null;
     public $modelClass;
+    public $searchModelClass;
     public $guestActions = [];
+
+    public $createScenario = ActiveRecord::SCENARIO_CREATE;
+    public $updateScenario = ActiveRecord::SCENARIO_UPDATE;
 
     /**
      * Override parent behaviors to ensure certain order on filters
@@ -97,7 +101,7 @@ abstract class BaseApiController extends ActiveController
         return [
             'index' => [
                 'class' => SearchAction::class,
-                'modelClass' => $this->modelClass,
+                'modelClass' => $this->searchModelClass,
                 'checkAccess' => [$this, 'checkAccess'],
             ],
             'view' => [

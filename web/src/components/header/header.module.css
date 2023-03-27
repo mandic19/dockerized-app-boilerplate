@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  align-items: center;
+  max-height: 4.4rem;
+  min-height: 4.4rem;
+  background-color: var(--primary);
+  color: var(--text-secondary);
+  padding: 0.6rem 0.4rem;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  margin: 0 0.4rem;
+}
+
+.nav button {
+  color: white;
+  margin-right: 4px;
+}
+
+.logo {
+  padding: 0.8rem 0.6rem;
+}
+
+.logo::before {
+  content: '';
+  background-image: url("../../assets/gifs/logo-static.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  width: 7.5rem;
+  height: 100%;
+}
+
+.logo:hover::before,
+.logo:focus::before {
+  background-image: url("../../assets/gifs/logo-dynamic.gif");
+}

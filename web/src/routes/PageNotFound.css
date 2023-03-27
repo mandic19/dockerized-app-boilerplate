@@ -1,0 +1,11 @@
+.page-not-found {
+  height: 100%;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.page-not-found > .code {
+  font-size: 25rem;
+  font-weight: 500;
+}

@@ -1,0 +1,14 @@
+.add-new-task {
+  position: relative;
+}
+
+.add-new-task > button {
+  width: 100%;
+  text-align: left;
+}
+
+
+.add-new-task > form > .wrapper {
+  width: 100%;
+  border: none;
+}

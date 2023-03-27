@@ -1,0 +1,61 @@
+.wrapper {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-height: 2.4rem;
+  min-width: 2.4rem;
+  background-color: transparent;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.wrapper:focus-within {
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-overflow: ellipsis;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  background: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: inherit;
+  resize: none;
+  cursor: pointer;
+}
+
+.textarea {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: var(--ds-shadow-raised, 0 1px 0 #091e4240);
+  color: var(--ds-text, inherit);
+  padding: 0.6rem 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.ghost {
+  color: transparent;
+}

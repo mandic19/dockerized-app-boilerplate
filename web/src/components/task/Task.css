@@ -1,0 +1,19 @@
+.task {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: var(--ds-shadow-raised, 0 1px 0 #091e4240);
+  color: var(--ds-text, inherit);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  z-index: 0;
+  padding: 6px 8px;
+}
+
+.task:hover {
+  background-color: var(--ds-surface-raised, #f4f5f7);
+  border-bottom-color: var(--ds-border, #091e4240);
+}
